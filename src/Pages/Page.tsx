@@ -9,14 +9,12 @@ const HomeComponent = React.lazy(()=> import('../Components/Home/Home'))
 function Page() {
   return <div>
      <Navbar/>
-      <Suspense fallback={<Loading/>}>
 
       <Routes>
-        <Route path='/' element={<HomeComponent/>} />
-      <Route path='/dashboard' element={<DashboardComponent/>}/>
-      <Route path='/about' element={<AboutComponent/>}/>
+        <Route path='/' element={<React.Suspense fallback={<div>loading..</div>}><HomeComponent/></React.Suspense>} />
+      <Route path='/dashboard' element={<React.Suspense fallback={ <div>loading..</div>}><DashboardComponent/></React.Suspense>}/>
+      <Route path='/about' element={<React.Suspense fallback={ <div>loading..</div>}><AboutComponent/></React.Suspense>}/>
       </Routes>
-      </Suspense>
   </div>;
 }
 
