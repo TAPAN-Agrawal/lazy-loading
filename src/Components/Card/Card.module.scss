@@ -1,0 +1,16 @@
+@mixin dimension {
+    height: 300px;
+    width: 300px;
+
+}
+
+.parent{
+    @include dimension;
+    border-radius: 50px;
+    margin:10px;
+    .img{
+        @include dimension;
+    border-radius: 50px;
+
+    }
+}

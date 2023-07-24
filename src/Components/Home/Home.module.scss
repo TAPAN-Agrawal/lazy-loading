@@ -1,0 +1,12 @@
+@import '../../Global/Global.module.scss';
+@mixin display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.main{
+    @include display;
+    height: 100vh;
+    background-color: $primary;
+}

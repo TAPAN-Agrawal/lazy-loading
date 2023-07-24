@@ -1,0 +1,11 @@
+@import '../../Global/Global.module.scss';
+@mixin display{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.parent{
+    @include display;
+    background-color:$primary;
+}
