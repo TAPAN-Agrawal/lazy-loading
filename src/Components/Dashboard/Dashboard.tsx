@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import classes from "./Dashboard.module.scss";
 import axios from "axios";
+import {LazyLoadImage} from 'react-lazy-load-image-component'
 
 const CardComponent = React.lazy(()=> import('../Card/Card'))
 
@@ -21,7 +22,8 @@ function Dashboard() {
         <Suspense fallback={<h1>Image is coming...</h1>}>
                 {
                     state.map(( x:any)=>(
-                        <CardComponent img={x.url}  />
+                        // <CardComponent img={x.url}  />
+                        <LazyLoadImage src={x.url} height={200} width={200}/>
                     )
 
                     )
